@@ -1,5 +1,5 @@
-var seconds = 100,
-    coountDiv = document.getElementById(çountdown),
+var seconds = 1500,
+    countDiv = document.getElementById('countDown'),
     secondPass,
     countDown = setInterval(function () {
         "use strict";
@@ -8,4 +8,15 @@ var seconds = 100,
 function secondPass() {
     "use strict";
     var minutes = Math.floor((seconds / 60)),
+        remSeconds = seconds % 60;
+    if (seconds < 10) {
+        remSeconds = "0" + remSeconds;
+    }
+    countDiv.innerHTML = minutes + ":" + remSeconds;
+    if (seconds > 0) {
+        seconds = seconds - 1;
+    } else {
+        clearInterval(countDown);
+        countDiv.innerHTML = 'Done';
+    }
 }
