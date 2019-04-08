@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.divbox {
+    background-image: radial-gradient(rgb(100, 100, 172),rgba(6, 35, 73, 0.795));
+    height: 100vh;
+    width: 100%;
+}
+
+.divCon {
+    width: 400px;
+    text-align: center;    
+    padding: 5px;
+    margin: auto;
+    padding-top: 30vh;
+}
+
+.divCon h1 {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 3em;
+    color: white;
+    margin-bottom: 20px;
+}
+.divCon input, button {
+    width: 80%;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 10px;;
+    border: 1px solid rgb(142, 158, 245);
+    border-radius: 4px;
+}
+
+.divCon p a {
+    color: blue;
+    font-family: sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.divCon button {
+    background: #fc9a10; /* Old browsers */
+    background: -moz-linear-gradient(top, #fc9a10 2%, #d26900 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fc9a10 2%,#d26900 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fc9a10 2%,#d26900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc9a10', endColorstr='#d26900',GradientType=0 ); /* IE6-9 */
+    color: white;
+}
