@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass the Message</title>
+    <style>
+        /* body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            font-weight: normal;
+            background: rgb(174, 209, 255);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            padding: 10px 20px;
+            width: 40vw;
+            -webkit-box-shadow: 3px 3px 13px 0px rgba(46, 50, 50, 0.65);
+            -moz-box-shadow: 3px 3px 13px 0px rgba(46, 50, 50, 0.65);
+            box-shadow: 3px 3px 13px 0px rgba(46, 50, 50, 0.65);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: white;
+        } */
+        input[type="text"] {
+            padding: 10px 20px;
+            width: 70%;
+            outline: none;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            padding: 14px 40px;
+            background: salmon;
+            outline: none;
+            margin: 10px 0;
+            color: white;
+            border: 1px solid rgb(255, 144, 144);
+            border-radius: 4px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+        h4 {
+            font-weight: 400;
+            font-size: 24px;
+        }
+        h3 {
+            text-transform: uppercase;
+            color: darkslategrey;
+        }
+        :root {
+        --lightBlue: #95b8d1;
+        --mainwhite: #f5f5f5;
+        --mainBlack: #333333;
+        }
+        .max-height {
+        min-height: 100vh;
+        }
+        body {
+        background: var(--lightBlue);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        }
+        .message-container {
+        background: var(--mainwhite);
+        display: flex;
+        flex-direction: column;
+        width: 40vw;
+        padding: 10px 20px;-webkit-box-shadow: 3px 3px 13px 0px rgba(46, 50, 50, 0.65);
+            -moz-box-shadow: 3px 3px 13px 0px rgba(46, 50, 50, 0.65);
+        box-shadow: 3px 3px 13px 0px rgba(46, 50, 50, 0.65);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+        .message-content {
+        color: var(--lightBlue);
+        }
+        #submitBtn {
+        background: var(--lightBlue);
+        color: var(--mainwhite);
+        }
+        #submitBtn:hover {
+        color: var(--lightBlue);
+        color: var(--mainBlack);
+        }
+
+        .feedback {
+        display: none;
+        }
+
+        .show {
+        display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row max-height align-items-center">
+         <div class="col-10 mx-auto col-md-8 message-container text-center p-3">
+          <h4 class="text-capitalize">A messge you would like to pass</h4>
+          <form id="message-form">
+           <input type="text" name="" id="message" class="w-100 my-3 p-2">
+           <input type="submit" id="submitBtn" class="btn btn-lg">
+          </form>
+          <h5 class="p-2 alert alert-danger my-3 text-capitalize feedback">please enter a value to pass</h5>
+          <h4 class="text-capitalize my-3">last message delivered</h4>
+          <h4 class="message-content text-uppercase">hello world</h4>
+      
+         </div>
+        </div>
+       </div>
+
+    <script>
+    (function() {
+    //Select the input element
+    const form = document.querySelector('#message-form')
+    //Set up Submit Button
+    form.addEventListener('submit', function(e){
+        // prevent the form's default submission action
+        e.preventDefault()
+        //Get user's input from from
+        const message = document.querySelector('#message')
+        const feedback = document.querySelector('.feedback')
+        const messageContent = document.querySelector('.message-content')
+
+        if (message.value === ''){
+            feedback.classList.add('show')
+            setTimeout(function(){
+            feedback.classList.remove('show')
+            }, 2000)
+        } else {
+            //Change message content and clear the message input
+            messageContent.textContent = message.value
+            message.value = ''
+        }
+    })
+    })()
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        background: rgb(233, 233, 233);
+    }
+    .container {
+        width: 500px;
+        padding: 50px 65px;
+        -webkit-box-shadow: 3px 3px 13px 0px rgba(46, 50, 50, 0.65);
+        -moz-box-shadow: 3px 3px 13px 0px rgba(46, 50, 50, 0.65);
+        box-shadow: 3px 3px 13px 0px rgba(46, 50, 50, 0.65);
+    }
+    #author {
+        color: aquamarine;
+        float: right;
+    }
+    span {
+        font-size: 40px;
+    }
+    button {
+        padding: 10px 20px;
+        border: none;
+        background: coral;
+    }
+</style>
+<body>
+    <div class="container">
+        <button type="submit" onclick="generateQoute()">Generate Qoute</button>
+        
+        <h2 id="qoute"><span>"</span>When one door closes another opens or you can open the closed door that’s how doors work.</h2>
+        <p id="author">Bill Mury</p>
+    </div>
+    <script>
+        const author = document.getElementById('author');
+        const btn = document.querySelector('button');
+
+        const qoutes = [
+            {
+                qoute: 'Life is fragile and temporary. The faces of today quickly become the faces of the past. Sorrow, pain, and anger... it all fades except love. Love is forever and there after, even when we\'ve fallen to our graves.',
+                author: 'Leo Argus'
+            },
+            {
+                qoute: 'Learn from the mistakes of others. You can\'t live long enough to make them all yourself.',
+                author: 'Eleanor Roosevelt'
+            },
+            {
+                qoute: 'The most important thing to remember is this: to be ready at any moment to give up what you are for what you might become.',
+                author: 'W.E.B. Du Bois'
+            },
+            {
+                qoute: 'Once you replace negative thoughts with positive ones, you\'ll start having positive results.',
+                author: 'Willie Nelson'
+            }
+        ];
+
+        function generateQoute() {
+            let random = Math.floor(Math.random() * qoutes.length);
+
+            document.getElementById('qoute').innerHTML = qoutes[random].qoute;
+            document.getElementById('author').innerHTML = qoutes[random].author;
+        }
+    </script>
+</body>
+</html>

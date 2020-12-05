@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #demo {
+            font-size: 36px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 2px;
+            color: #d8d8d8;
+        }
+        button {
+            padding: 20px 50px;
+            font-size: 18px;
+            background: hsla(0, 0%, 57%, 0.247);
+            outline: none;
+            border-radius: 2px;
+            border: 2px solid rgba(61, 61, 61, 0.63);
+        }
+    </style>
+</head>
+<body>
+    <p id="demo">#ffffff</p>
+    <button type="button" class="btn" onclick="changeColor()">Click me</button>
+    
+    <!-- change background colors -->
+    <!-- <script>
+        const body = document.querySelector('body');
+        const colors = ['pink','purple','darkorange','cyan','magenta'];
+        const btn = document.querySelector('button');
+
+        function changeColor() {
+            const x = Math.floor(Math.random() * colors.length);
+            console.log(x);
+            body.style.background = colors[x];
+        }
+    </script> -->
+
+    <!-- Change background color using HEX values -->
+    <script>
+        const body = document.querySelector('body');
+        const colors = ['A','B','D', 'E', 'F',0,1,2,3,4,5,6,7,8,9];
+        const btn = document.querySelector('button');
+        const hex = document.getElementById('demo');
+
+        function changeColor() {
+            let hash = '#';
+            
+            
+            for(let x = 0; x < 6; x++) {
+                let hexValue = Math.floor(Math.random() * colors.length);
+                hash += colors[hexValue];  
+                              
+                console.log(hash);
+            }
+            hex.innerHTML = hash;
+            body.style.background = hash;
+        }
+    </script>
+
+
+</body>
+</html>
